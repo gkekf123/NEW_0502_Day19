@@ -22,36 +22,54 @@ public class ListQuiz01 {
 		 *   User객체 안에 홍길자가 있으면 해당 객체를 삭제 코드
 		 */
 		
-//		List<Integer> list = new ArrayList<>();
-//		
-//		for(int i = 1; i <= 20; i++) {
-//			list.add(i);
-//		}
-//		System.out.println(list.toString());
+		List<Integer> list = new ArrayList<>();
 		
-		////////////////////////////////////////////
+		for(int i = 1; i <= 20; i++) {
+			list.add(i);
+		}
 		
-		List<User> user = new ArrayList<>();
+		for(int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
+		}
 		
-		User user1 = new User("홍길동", "20");
-		User user2 = new User("홍길자", "30");
-		User user3 = new User("이순신", "40");
 		
-		user.add(user1);
-		user.add(user2);
-		user.add(user3);
+		System.out.println("=======================================================");
 		
-		for(int i = 0; i < user.size(); i++) {
-			if(user1.getName().equals("홍길동")) {
-				System.out.println(user1.getName() + ", " + user1.getAge());
-			} else if(user1.getName().equals("홍길자")){
-				user.remove("홍길자");
+		
+		List<User> userlist = new ArrayList<>();
+		
+		User user1 = new User("홍길동", 20);
+		User user2 = new User("홍길자", 30);
+		User user3 = new User("이순신", 40);
+		
+		userlist.add(user1);
+		userlist.add(user2);
+		userlist.add(user3);
+		
+		for(int i = 0; i < userlist.size(); i++) {
+			
+//			User u = userlist.get(i);
+//			String name = u.getName();
+			
+//			if(name.equals("홍길동")) {
+//				System.out.println(u.getName() + " " + u.getAge());
+//			} else if(name.equals("홍길자")) {
+//
+//			}
+			User u = userlist.get(i);
+			
+			if(u.getName().equals("홍길동")) {
+				System.out.println(u.getName() + " " + u.getAge());
+			} else if(u.getName().equals("홍길자")) {
+				userlist.remove(i);
+				System.out.println("홍길자 삭제");
 			}
 		}
-		System.out.println(user.toString());
+		System.out.println(userlist.toString());
 		
-	
-	
+		
+			
+			
 	}
 
 }
